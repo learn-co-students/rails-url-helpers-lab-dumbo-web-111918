@@ -1,0 +1,6 @@
+<h1><%= @student.to_s %> is <%= @student.active ? "Active":"Inactive"%> </h1>
+<form action="/students/<%= @student.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="hidden" name="student[active]" value="<%= @student.active ? false:true%>">
+  <input type="submit" value="<%= @student.active ? "Deactivate":"Activate"%>">
+</form>
